@@ -1,0 +1,31 @@
+.container{
+    position: relative;
+    overflow: hidden;
+}
+
+.container .image-slider{
+    display: flex;
+    overflow-x: scroll;
+}
+
+.nav-selection{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    opacity: 0.5;
+    color: '#fff';
+    background-color: black;
+    display: flex ;
+    justify-content: flex-end;
+    align-items: stretch;
+}
+
+.nav-selection .slider-button{
+    display: flex;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    text-decoration: none;
+    border-radius: 50%;
+    margin: 5px;
+}

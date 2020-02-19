@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { TopMenu } from './components';
+import { Component, ViewChild } from '@angular/core';
+import { TopMenu, ImageSlider, ImageSliderComponent } from './components';
 
 // 使用interface定义属性
 //属性?:类型  代表可选属性
@@ -24,6 +24,7 @@ import { TopMenu } from './components';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild(ImageSliderComponent,{static:true}) imageSlider: ImageSliderComponent;
   scrollTabBackgroundCorlor = "red";
   topMenus:TopMenu[] = [{
     title:'热门',
@@ -107,6 +108,44 @@ export class AppComponent {
   }
 ];
 
+imageSliders:ImageSlider[] = [
+  {
+    imageUrl:'http://img4.imgtn.bdimg.com/it/u=2853553659,1775735885&fm=26&gp=0.jpg',
+    link:'',
+    caption:''
+  },
+  {
+    imageUrl:'http://img0.imgtn.bdimg.com/it/u=3386247472,87720242&fm=26&gp=0.jpg',
+    link:'',
+    caption:''
+  },
+  {
+    imageUrl:'http://cdn.duitang.com/uploads/item/201207/15/20120715123055_YLXnZ.thumb.700_0.gif',
+    link:'',
+    caption:''
+  },
+  {
+    imageUrl:'http://img1.imgtn.bdimg.com/it/u=1594194690,421103485&fm=11&gp=0.jpg',
+    link:'',
+    caption:''
+  },
+  {
+    imageUrl:'http://img0.imgtn.bdimg.com/it/u=767932468,3304632938&fm=11&gp=0.jpg',
+    link:'',
+    caption:''
+  },
+  {
+    imageUrl:'http://img1.imgtn.bdimg.com/it/u=300568138,492070383&fm=11&gp=0.jpg',
+    link:'',
+    caption:''
+  }
+];
+
+ngAfterViewInit(): void {
+  //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+  //Add 'implements AfterViewInit' to the class.
+  console.log(this.imageSlider);
+}
 
 handlerSelect(topMenus:TopMenu){
   const colors = ['red','blue','black'];
