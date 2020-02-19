@@ -24,7 +24,7 @@ import { TopMenu } from './components';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
+  scrollTabBackgroundCorlor = "red";
   topMenus:TopMenu[] = [{
     title:'热门',
     link:''
@@ -109,6 +109,9 @@ export class AppComponent {
 
 
 handlerSelect(topMenus:TopMenu){
+  const colors = ['red','blue','black'];
+  const indx = Math.floor(Math.random() * 3);
+  this.scrollTabBackgroundCorlor = colors[indx];
   console.log(topMenus);
 }
   // add:addFunc = (x,y) => x + y;

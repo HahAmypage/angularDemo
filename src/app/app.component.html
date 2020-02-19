@@ -1,8 +1,9 @@
 <app-scrollable-tab 
   [menus]='topMenus'(tabsSelected) = 'handlerSelect($event)' 
-  backgroundColor="red"
+  [backgroundColor]= "scrollTabBackgroundCorlor"
   titleActiveColor = 'yellow'
   titleColor = '#fff'
   indicationColor = 'yellow'
-  >
+    >
+  <div>hello angular</div>
 </app-scrollable-tab>
