@@ -1,3 +1,9 @@
 <ul>
-  <li *ngFor="let item of tabs"><a href="#">{{  item  }}</a></li>
+  <li *ngFor="let menu of menus;let i = index; trackBy:menu ? menu.title : null" >
+    <a href="#" 
+    [class.active]='i === selectIndex'
+    (click)=hanlderSelection(i)>
+      {{  menu.title  }}
+    </a>
+  </li>
 </ul>
