@@ -5,6 +5,7 @@
       (click)=hanlderSelection(i)>
         {{  menu.title  }}
       </a>
+      <span class="indicator" *ngIf="i === selectIndex"></span>
     </li>
   </ul>
 

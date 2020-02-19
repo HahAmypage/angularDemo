@@ -6,7 +6,10 @@ ul{
 }
 
 ul li {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     margin: 0px 5px;
     padding: 0px;
     white-space: nowrap;
@@ -23,3 +26,17 @@ a{
 .active{
     color: red;
 }
+
+.indicator{
+    background-color: brown;
+    height: 2px;
+    width: 2rem;
+    margin-top: 2px;
+}
+
+/* .indicator2{
+    background-color:green;
+    height: 2px;
+    width: 2rem;
+    margin-top: 2px;
+} */
