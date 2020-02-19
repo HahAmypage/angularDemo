@@ -1,1 +1,8 @@
-<app-scrollable-tab [menus]='topMenus'(tabsSelected) = 'handlerSelect($event)'></app-scrollable-tab>
+<app-scrollable-tab 
+  [menus]='topMenus'(tabsSelected) = 'handlerSelect($event)' 
+  backgroundColor="red"
+  titleActiveColor = 'yellow'
+  titleColor = '#fff'
+  indicationColor = 'yellow'
+  >
+</app-scrollable-tab>
