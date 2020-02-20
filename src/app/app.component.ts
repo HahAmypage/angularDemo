@@ -110,32 +110,32 @@ export class AppComponent {
 
 imageSliders:ImageSlider[] = [
   {
-    imageUrl:'http://img4.imgtn.bdimg.com/it/u=2853553659,1775735885&fm=26&gp=0.jpg',
+    imageUrl:'http://img3.imgtn.bdimg.com/it/u=2841247860,2911841437&fm=26&gp=0.jpg',
     link:'',
     caption:''
   },
   {
-    imageUrl:'http://img0.imgtn.bdimg.com/it/u=3386247472,87720242&fm=26&gp=0.jpg',
+    imageUrl:'http://img4.imgtn.bdimg.com/it/u=3324650843,4203827181&fm=26&gp=0.jpg',
     link:'',
     caption:''
   },
   {
-    imageUrl:'http://cdn.duitang.com/uploads/item/201207/15/20120715123055_YLXnZ.thumb.700_0.gif',
+    imageUrl:'http://img2.imgtn.bdimg.com/it/u=3313838802,2768404782&fm=26&gp=0.jpg',
     link:'',
     caption:''
   },
   {
-    imageUrl:'http://img1.imgtn.bdimg.com/it/u=1594194690,421103485&fm=11&gp=0.jpg',
+    imageUrl:'http://img3.imgtn.bdimg.com/it/u=1362874374,2095103613&fm=26&gp=0.jpg',
     link:'',
     caption:''
   },
   {
-    imageUrl:'http://img0.imgtn.bdimg.com/it/u=767932468,3304632938&fm=11&gp=0.jpg',
+    imageUrl:'http://img1.imgtn.bdimg.com/it/u=3896836351,1384250740&fm=26&gp=0.jpg',
     link:'',
     caption:''
   },
   {
-    imageUrl:'http://img1.imgtn.bdimg.com/it/u=300568138,492070383&fm=11&gp=0.jpg',
+    imageUrl:'http://img5.imgtn.bdimg.com/it/u=279375686,3789972975&fm=26&gp=0.jpg',
     link:'',
     caption:''
   }
