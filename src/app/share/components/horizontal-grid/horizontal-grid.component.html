@@ -1,0 +1,23 @@
+<!-- <input type="text" [value]="username"
+ (input) = "username = $event.target.value"/>
+hi,<span>{{ username }}</span> -->
+
+<!-- 上面的效果和下面一致 -->
+<!-- <input type="text" [(ngModel)] = "usename"/>
+hi,<span>{{ usename }}</span> -->
+
+<!-- 使用get/set方法效果一致 -->
+<!-- <input type="text" [value]="username"
+(input) = "username = $event.target.value"/>
+hi,<span>{{ username }}</span>  -->
+
+
+<input type="text" [value]="username"
+(input) = "username = $event.target.value"/>
+hi,<span>{{ username }}</span>  
+
+{{  result  }}
+
+<span (click) = "handlerCick()">点我</span>
+
+

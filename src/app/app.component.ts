@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { TopMenu, ImageSlider, ImageSliderComponent } from './components';
+import { TopMenu, ImageSlider, ImageSliderComponent } from './share/components';
 
 // 使用interface定义属性
 //属性?:类型  代表可选属性
@@ -147,6 +147,7 @@ ngAfterViewInit(): void {
   console.log(this.imageSlider);
 }
 
+username = '';
 handlerSelect(topMenus:TopMenu){
   const colors = ['red','blue','black'];
   const indx = Math.floor(Math.random() * 3);
