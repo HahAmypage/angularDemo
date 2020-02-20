@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, HostListener } from '@angular/core';
 import { Emoji, Comfiguration } from '../../decorators';
 
 export interface Channel{
@@ -91,4 +91,9 @@ export class HorizontalGridComponent implements OnInit {
     console.log("click me!!!!")
   }
   
+
+  @HostListener('click',['$event.target'])
+  handlerCilck(ev){
+    console.log(ev);
+  }
 }

@@ -1,3 +1,7 @@
 input{
     border: 1px dashed black;
 }
+
+/* :host{
+    font-weight: 600;
+} */
