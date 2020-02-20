@@ -147,7 +147,7 @@ ngAfterViewInit(): void {
   console.log(this.imageSlider);
 }
 
-username = '';
+// username = '';
 handlerSelect(topMenus:TopMenu){
   const colors = ['red','blue','black'];
   const indx = Math.floor(Math.random() * 3);

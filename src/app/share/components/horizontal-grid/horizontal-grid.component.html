@@ -11,13 +11,17 @@ hi,<span>{{ usename }}</span> -->
 (input) = "username = $event.target.value"/>
 hi,<span>{{ username }}</span>  -->
 
-
+<!-- 
 <input type="text" [value]="username"
 (input) = "username = $event.target.value"/>
 hi,<span>{{ username }}</span>  
 
-{{  result  }}
+{{  result  }} -->
 
-<span (click) = "handlerCick()">点我</span>
+<!-- <span (click) = "handlerCick()">点我</span> -->
+<div appGridItem *ngFor="let item of channels">
+    <img [src]="item.icon" alt="" [appGridItemImage] = "'3rem'" >
+<span appGridItemTitle>{{ item.title  }}</span>
+</div>
 
 
