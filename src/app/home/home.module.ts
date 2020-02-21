@@ -7,10 +7,22 @@ import { HomeContainerComponent } from './components/home-container';
 import { HomeDetailComponent } from './components/home-detail/home-detail.component';
 import { HomeGrandComponent } from './components/home-grand/home-grand.component';
 import { HomeAuxComponent } from './components/home-aux/home-aux.component';
+import { HomeService, token } from './services';
 
 
 @NgModule({
-  declarations: [HomeContainerComponent, HomeDetailComponent, HomeGrandComponent, HomeAuxComponent],
+  declarations: [
+    HomeContainerComponent,
+    HomeDetailComponent,
+    HomeGrandComponent,
+    HomeAuxComponent
+  ],
+  providers:[
+    {
+      provide:token,
+      useValue: 'www.google.com'
+    }
+  ],
   imports: [
     ShareModule,
     HomeRoutingModule
