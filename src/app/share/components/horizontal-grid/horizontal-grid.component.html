@@ -19,9 +19,35 @@ hi,<span>{{ username }}</span>
 {{  result  }} -->
 
 <!-- <span (click) = "handlerCick()">点我</span> -->
-<div appGridItem *ngFor="let item of channels">
+<!-- <div appGridItem *ngFor="let item of channels">
     <img [src]="item.icon" alt="" [appGridItemImage] = "'3rem'" >
-<span appGridItemTitle>{{ item.title  }}</span>
+    <span appGridItemTitle>{{ item.title  }}</span>
+</div> -->
+
+<!-- 这里可以通过select来选择要显示的内容（值可以是样式、html标签、指令、或者[属性名]包括自定义属性名） -->
+<!-- <div class="container"
+ [ngStyle]="{'grid-template-rows': templateRows , 'grid-template-columns':templateColumns}"
+ (scroll) = "handlerScoller">
+    <ng-content select = "[appGridItem]"></ng-content>
+</div> -->
+<div class="container"
+[ngStyle]="{'grid-template-rows': templateRows , 'grid-template-columns':templateColumns}"
+(scroll) = "handlerScoller($event)">
+    <ng-content select="[appGridItem]"></ng-content> 
 </div>
+<div class="underline" ngif="scrollable">
+    <div class="hightline" [ngStyle]="{'margin': sliderMargin}"></div>
+</div>
+
+<!-- <ng-content select="[appGridItem]"></ng-content>  -->
+
+
+
+
+
+
+
+
+
 
 

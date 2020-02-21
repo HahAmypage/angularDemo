@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked } from '@angular/core';
 
 export interface TopMenu{
+  id:number,
   title:string,
   link:string
 }
@@ -32,7 +33,7 @@ export class ScrollableTabComponent implements OnInit , OnChanges, DoCheck,After
    * 组件构造函数最先调用
    */
   constructor() {
-    console.log("调用组件构造函数")
+    // console.log("调用组件构造函数");
    }
 
    /**
@@ -42,14 +43,14 @@ export class ScrollableTabComponent implements OnInit , OnChanges, DoCheck,After
    ngOnChanges(changes: SimpleChanges): void {
      //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
      //Add '${implements OnChanges}' to the class.
-     console.log("组件属性值变化",changes);
+    //  console.log("组件属性值变化",changes);
    }
 
   /**
    * 组件初始化完成，在这个函数中，我们可以放心地使用组件的属性和方法
    */
   ngOnInit() {
-    console.log("组件初始化");
+    // console.log("组件初始化");
   }
 
   /**
@@ -58,7 +59,7 @@ export class ScrollableTabComponent implements OnInit , OnChanges, DoCheck,After
   ngDoCheck(): void {
     //Called every time that the input properties of a component or a directive are checked. Use it to extend change detection by performing a custom check.
     //Add 'implements DoCheck' to the class.
-    console.log("脏值检查");
+    // console.log("脏值检查");
   }
 
   /**
@@ -67,7 +68,7 @@ export class ScrollableTabComponent implements OnInit , OnChanges, DoCheck,After
   ngAfterContentInit(): void {
     //Called after ngOnInit when the component's or directive's content has been initialized.
     //Add 'implements AfterContentInit' to the class.
-    console.log("组件内容初试化");
+    // console.log("组件内容初试化");
   }
 
   /**
@@ -76,7 +77,7 @@ export class ScrollableTabComponent implements OnInit , OnChanges, DoCheck,After
   ngAfterContentChecked(): void {
     //Called after every check of the component's or directive's content.
     //Add 'implements AfterContentChecked' to the class.
-    console.log("组件内容脏值检查");
+    // console.log("组件内容脏值检查");
   }
 
   /**
@@ -85,7 +86,7 @@ export class ScrollableTabComponent implements OnInit , OnChanges, DoCheck,After
   ngAfterViewInit(): void {
     //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
     //Add 'implements AfterViewInit' to the class.
-    console.log("组件视图初始化");
+    // console.log("组件视图初始化");
   }
 
   /**
@@ -94,7 +95,7 @@ export class ScrollableTabComponent implements OnInit , OnChanges, DoCheck,After
   ngAfterViewChecked(): void {
     //Called after every check of the component's view. Applies to components only.
     //Add 'implements AfterViewChecked' to the class.
-    console.log("组件视图脏值检查");
+    // console.log("组件视图脏值检查");
   }
 
   /**
@@ -104,7 +105,7 @@ export class ScrollableTabComponent implements OnInit , OnChanges, DoCheck,After
   ngOnDestroy(): void {
     //Called once, before the instance is destroyed.
     //Add 'implements OnDestroy' to the class.
-    console.log("组件销毁")
+    // console.log("组件销毁");
   }
 
   hanlderSelection(index:number) {

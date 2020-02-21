@@ -1,0 +1,21 @@
+<p>
+    {{ data | json }}
+</p>
+
+<p>
+    {{ date | date:'yyyy-MM-dd HH:mm:ss' }}
+</p>
+
+<p>
+    {{ date | agoPipe }}
+</p>
+
+<p>
+    <!-- symbol后面限制位数  这里表示整数至少1位，小数是2-3位最多3位 -->
+    {{ price | currency:'CNY' : 'symbol' : '1.2-3'}}
+</p>
+
+<p>
+    <!-- 取数组中 [a,b)索引之间的值 -->
+    {{ array | slice: 1 : 4 }}
+</p>

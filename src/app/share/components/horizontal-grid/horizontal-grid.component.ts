@@ -15,85 +15,61 @@ export interface Channel{
 })
 export class HorizontalGridComponent implements OnInit {
 
-  channels:Channel[] = [
-    {
-      id:'1',
-      icon:'http://pics.sc.chinaz.com/Files/pic/icons128/7623/cc10.png',
-      title:'雪糕',
-      link:'',
-    },
-    {
-      id:'2',
-      icon:'http://pics.sc.chinaz.com/Files/pic/icons128/7623/cc1.png',
-      title:'串烧',
-      link:'',
-    },
-    {
-      id:'3',
-      icon:'http://pics.sc.chinaz.com/Files/pic/icons128/7623/cc11.png',
-      title:'泡面',
-      link:'',
-    },
-    {
-      id:'4',
-      icon:'http://pics.sc.chinaz.com/Files/pic/icons128/7623/cc14.png',
-      title:'披萨',
-      link:'',
-    },
-    {
-      id:'5',
-      icon:'http://pics.sc.chinaz.com/Files/pic/icons128/7623/cc16.png',
-      title:'三文治',
-      link:'',
-    },
-    {
-      id:'6',
-      icon:'http://pics.sc.chinaz.com/Files/pic/icons128/7623/cc4.png',
-      title:'甜甜圈',
-      link:'',
-    },
-    {
-      id:'7',
-      icon:'http://pics.sc.chinaz.com/Files/pic/icons128/7623/cc5.png',
-      title:'薯条',
-      link:'',
-    },
-    {
-      id:'8',
-      icon:'http://pics.sc.chinaz.com/Files/pic/icons128/7623/cc6.png',
-      title:'炸鸡',
-      link:'',
-    }
-  ];
+  
 
   // usename = '';
-  private _username = '';
-  @Emoji() result  = 'haha';
-  @Output() usernameChange = new EventEmitter();
+  // private _username = '';
+  // @Emoji() result  = 'haha';
+  // @Output() usernameChange = new EventEmitter();
+
+  @Input() cols = 8;
+  @Input() displayCols = 5;
+  sliderMargin = '0';
   constructor() { }
 
   ngOnInit() {
   }
 
-  @Input()
-  public get username() : string {
-    return this._username;
+  
+  public get scrollable() : boolean {
+    return this.cols > this.displayCols;
   }
   
-
-  public set username(value : string) {
-    this._username = value;
-    this.usernameChange.emit(value); 
-  }
-
-  @Comfiguration('确认要操作吗?')
-  handlerCick(){
-    console.log("click me!!!!")
+  
+  public get templateRows() : string {
+    return `minmax(auto,max-content)`;
   }
   
-
-  @HostListener('click',['$event.target'])
-  handlerCilck(ev){
-    console.log(ev);
+  
+  public get templateColumns() : string {
+    return `repeat(${this.cols},calc((100vw - ${this.displayCols * 0.4}rem) / ${this.displayCols}))`;
   }
+  
+  handlerScoller(ev){
+    this.sliderMargin = `0 ${100 * ev.target.scrollLeft / ev.target.scrollWidth }%`;
+  }
+
+
+
+  // @Input()
+  // public get username() : string {
+  //   return this._username;
+  // }
+  
+
+  // public set username(value : string) {
+  //   this._username = value;
+  //   this.usernameChange.emit(value); 
+  // }
+
+  // @Comfiguration('确认要操作吗?')
+  // handlerCick(){
+  //   console.log("click me!!!!")
+  // }
+  
+
+  // @HostListener('click',['$event.target'])
+  // handlerCilck(ev){
+  //   console.log(ev);
+  // }
 }
