@@ -1,6 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { HomeContainerComponent, HomeDetailComponent, HomeGrandComponent, HomeAuxComponent } from './home';
+import { HomeContainerComponent, HomeDetailComponent, HomeGrandComponent, HomeAuxComponent, ParentComponent } from './home';
 
 
 const routes: Routes = [
@@ -30,6 +30,11 @@ const routes: Routes = [
             }
         ]
      },
+     {
+         path:'change-detection',
+         pathMatch:'full',
+         component: ParentComponent
+     }
 
     //{ path: 'path/:routeParam', component: MyComponent },
     //{ path: 'staticPath', component: ... },

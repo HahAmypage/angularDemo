@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, ChangeDetectionStrategy } from '@angular/core';
 
 export interface TopMenu{
   id:number,
@@ -9,7 +9,8 @@ export interface TopMenu{
 @Component({
   selector: 'app-scrollable-tab',
   templateUrl: './scrollable-tab.component.html',
-  styleUrls: ['./scrollable-tab.component.css']
+  styleUrls: ['./scrollable-tab.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
  /**

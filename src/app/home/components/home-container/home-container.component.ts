@@ -10,7 +10,7 @@ import { HomeService, token } from '../../services';
 })
 export class HomeContainerComponent implements OnInit {
 
-  scrollTabBackgroundCorlor = "red";
+  // scrollTabBackgroundCorlor = "red";
   topMenus:TopMenu[] = [];
   constructor(
     private router: Router,

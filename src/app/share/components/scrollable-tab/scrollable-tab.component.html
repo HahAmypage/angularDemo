@@ -1,5 +1,7 @@
 <ul [ngStyle]="{'background-color':backgroundColor}">
-    <li *ngFor="let menu of menus;let i = index; let even = even; let odd = odd;" [ngClass] = "{'even':even,'odd':odd}"> 
+    <li *ngFor="let menu of menus;let i = index;" > 
+      <!-- 把let even = even; let odd = odd;放在ngfor中 
+         把[ngClass] = "{'even':even,'odd':odd}" 放在i标签中，可实现间隔的效果-->
       <a 
       [ngStyle]="{color:i === selectIndex ? titleActiveColor:titleColor}"
       (click)=hanlderSelection(i)>

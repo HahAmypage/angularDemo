@@ -1,0 +1,9 @@
+<p>child works!</p>
+
+<span [textContent]="time | date: 'HH:mm:ss SSS'" ></span><br/>
+
+<span #timeRef ></span>
+
+<button (click) = "handlerClick()">time</button>
+<!-- 注意这里上下两种写法效果一致 -->
+<!-- <span>{{ title }}</span> -->

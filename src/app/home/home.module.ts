@@ -8,6 +8,8 @@ import { HomeDetailComponent } from './components/home-detail/home-detail.compon
 import { HomeGrandComponent } from './components/home-grand/home-grand.component';
 import { HomeAuxComponent } from './components/home-aux/home-aux.component';
 import { HomeService, token } from './services';
+import { ParentComponent } from './components/parent/parent.component';
+import { ChildComponent } from './components/child/child.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { HomeService, token } from './services';
     HomeContainerComponent,
     HomeDetailComponent,
     HomeGrandComponent,
-    HomeAuxComponent
+    HomeAuxComponent,
+    ParentComponent,
+    ChildComponent
   ],
   providers:[
     {
