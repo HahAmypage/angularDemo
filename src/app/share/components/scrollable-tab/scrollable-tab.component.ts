@@ -22,7 +22,8 @@ export interface TopMenu{
 export class ScrollableTabComponent implements OnInit , OnChanges, DoCheck,AfterContentInit,AfterContentChecked,AfterViewInit,AfterViewChecked{
 
   title = '拼多多';
-  selectIndex = 0 ; // 起始值,默认打开页面时选择“热门”
+  // selectIndex = 0 ; // 起始值,默认打开页面时选择“热门”
+  @Input() selectTabLink: string ;
 
   @Input() menus:TopMenu[] = [];
   @Input() backgroundColor = '#fff';
@@ -110,8 +111,8 @@ export class ScrollableTabComponent implements OnInit , OnChanges, DoCheck,After
   }
 
   hanlderSelection(index:number) {
-    this.selectIndex = index;
-    this.tabsSelected.emit(this.menus[this.selectIndex]);
+    // this.selectIndex = index;
+    this.tabsSelected.emit(this.menus[index]);
   }
 
 }

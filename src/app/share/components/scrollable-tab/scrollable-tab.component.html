@@ -7,7 +7,8 @@
       (click)=hanlderSelection(i)>
         {{  menu.title  }}
       </a>
-      <span class="indicator" [ngStyle] = "{'background-color':indicationColor}" *ngIf="i === selectIndex"></span>
+      <span class="indicator" [ngStyle] = "{'background-color':indicationColor}" 
+      *ngIf="menu.link === selectTabLink"></span>
     </li>
   </ul>
   <ng-content></ng-content>

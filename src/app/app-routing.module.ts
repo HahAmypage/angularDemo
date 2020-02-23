@@ -5,36 +5,15 @@ import { HomeContainerComponent, HomeDetailComponent, HomeGrandComponent, HomeAu
 
 const routes: Routes = [
     { 
-        path: 'home', 
-        component: HomeContainerComponent,
-        children:[
-            {
-                path:'',
-                redirectTo: 'hot',
-                pathMatch:'full'
-            },
-            {
-                path:':tablink',
-                component: HomeDetailComponent,
-                children:[
-                    {
-                        path:'grand',
-                        component:HomeGrandComponent
-                    },
-                    {
-                        path:'aux',
-                        component:HomeAuxComponent,
-                        outlet:'second'
-                    }
-                ]
-            }
-        ]
+        path: '', 
+        redirectTo: 'home',
+        pathMatch: 'full'
      },
-     {
-         path:'change-detection',
-         pathMatch:'full',
-         component: ParentComponent
-     }
+    //  {
+    //      path:'change-detection',
+    //      pathMatch:'full',
+    //      component: ParentComponent
+    //  }
 
     //{ path: 'path/:routeParam', component: MyComponent },
     //{ path: 'staticPath', component: ... },

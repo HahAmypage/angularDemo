@@ -1,4 +1,4 @@
-<div *ngIf="selectTabLink === 'hot' else other">
+<div *ngIf="selectTabLink === 'hot'">
     <app-image-slider [sliders]="imageSliders"> </app-image-slider>
 
     <app-horizontal-grid>
@@ -9,17 +9,17 @@
     </app-horizontal-grid>
 </div>
 
-<ng-template #other>
+<!-- <ng-template #other>
     other tabs
-</ng-template>
+</ng-template> -->
 
 <!-- <a [routerLink]="[ 'grand']">click me to the grand</a> -->
 <!-- 添加一个active样式 ,点击后显示active样式-->
 <!-- 添加[queryParams]后，点击链接后自动添加上参数 -->
-<a [routerLink]="[ 'grand' ]" routerLinkActive="active" [queryParams]="{haha:122,hehe:334}">haahhehe</a>
+<!-- <a [routerLink]="[ 'grand' ]" routerLinkActive="active" [queryParams]="{haha:122,hehe:334}">haahhehe</a> -->
 
 <!-- 注意outlet不要漏了s -->
-<a [routerLink]="[ {outlets:{second:['aux']}} ]" >link to second</a>
-<router-outlet></router-outlet>
+<!-- <a [routerLink]="[ {outlets:{second:['aux']}} ]" >link to second</a> -->
+<!-- <router-outlet></router-outlet> -->
 <!-- 关于router-outlet，只能有一个没有name的router-outlet，如果设置多个router-outlet，要起名字 -->
-<router-outlet name="second"></router-outlet>
+<!-- <router-outlet name="second"></router-outlet> -->
