@@ -1,0 +1,45 @@
+@baseUrl = https://jsonplaceholder.typicode.com
+
+GET {{baseUrl}}/posts HTTP/1.1
+
+###
+POST {{baseUrl}}/posts HTTP/1.1
+Content-Type: application/json 
+
+  {
+    "userId": 1,
+    "title": "我的post测试",
+    "body": "我的post测试内容"
+  }
+
+###
+PUT {{baseUrl}}/posts/1 HTTP/1.1
+Content-Type: application/json 
+
+  {
+    "userId": 1,
+    "title": "我的post测试",
+    "body": "我的post测试修改内容"
+  }
+
+###
+DELETE {{baseUrl}}/posts/1 HTTP/1.1
+
+###
+GET {{host}}/banners?icode={{icode}} HTTP/1.1
+
+###
+GET {{host}}/tabs?icode={{icode}} HTTP/1.1
+
+###
+GET {{host}}/channels?icode={{icode}} HTTP/1.1
+
+###
+GET http://localhost:9001/tabs HTTP/1.1
+
+###
+GET http://localhost:9001/banners HTTP/1.1
+
+
+###
+GET http://localhost:9001/channels HTTP/1.1

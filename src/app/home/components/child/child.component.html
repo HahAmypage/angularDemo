@@ -3,7 +3,9 @@
 <span [textContent]="time | date: 'HH:mm:ss SSS'" ></span><br/>
 
 <span #timeRef ></span>
-
+<input type="text" #inputRef> 
 <button (click) = "handlerClick()">time</button>
+
+
 <!-- 注意这里上下两种写法效果一致 -->
 <!-- <span>{{ title }}</span> -->

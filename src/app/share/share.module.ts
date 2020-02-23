@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ScrollableTabComponent, ImageSliderComponent, HorizontalGridComponent } from './components';
 import { GridItemDirective, GridItemImageDirective, GridItemTitleDirective } from './directives';
 import { AgoPipe } from './pipes';
+import { CountDownComponent } from './components/count-down/count-down.component';
 
 
 
@@ -15,7 +16,8 @@ import { AgoPipe } from './pipes';
     GridItemDirective,
     GridItemImageDirective,
     GridItemTitleDirective,
-    AgoPipe
+    AgoPipe,
+    CountDownComponent
   ],
   imports: [
     CommonModule,FormsModule
@@ -28,7 +30,8 @@ import { AgoPipe } from './pipes';
     GridItemDirective,
     GridItemImageDirective,
     GridItemTitleDirective,
-    AgoPipe
+    AgoPipe,
+    CountDownComponent
   ]
 })
 export class ShareModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit, NgZone, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { formatDate } from '@angular/common';
+import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-child',
@@ -17,12 +18,17 @@ export class ChildComponent implements OnInit {
   }
   
   @ViewChild('timeRef',{static:true}) timeRef: ElementRef;
+  @ViewChild('inputRef',{static: true}) inputRef: ElementRef;
   constructor(private ngzone: NgZone,private rd2: Renderer2) { 
-    this._title= 'hello';
+
   }
 
   ngOnInit() {
-    
+    this._title= 'hello';
+    fromEvent(this.inputRef.nativeElement,'input').subscribe((ev: any)=>{
+      console.log(ev.target.value);
+    })
+    console.log("afte");
   }
 
   

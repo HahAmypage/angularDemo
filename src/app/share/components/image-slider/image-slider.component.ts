@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, ViewChildren, QueryList, Renderer2, AfterViewInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 
 export interface ImageSlider{
+  id: number,
   imageUrl: string,
   link:string,
   caption:string;
