@@ -5,6 +5,7 @@ import { ScrollableTabComponent, ImageSliderComponent, HorizontalGridComponent }
 import { GridItemDirective, GridItemImageDirective, GridItemTitleDirective } from './directives';
 import { AgoPipe } from './pipes';
 import { CountDownComponent } from './components/count-down/count-down.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -17,7 +18,8 @@ import { CountDownComponent } from './components/count-down/count-down.component
     GridItemImageDirective,
     GridItemTitleDirective,
     AgoPipe,
-    CountDownComponent
+    CountDownComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,FormsModule
@@ -31,7 +33,8 @@ import { CountDownComponent } from './components/count-down/count-down.component
     GridItemImageDirective,
     GridItemTitleDirective,
     AgoPipe,
-    CountDownComponent
+    CountDownComponent,
+    FooterComponent
   ]
 })
 export class ShareModule { }

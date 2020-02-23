@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { RecommendRoutingModule } from './recommend-routing.module';
 import { ShareModule } from '../share/share.module';
+import { RecommendContainerComponent } from './components/recommend-container/recommend-container.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [RecommendContainerComponent],
   imports: [
     ShareModule,
     RecommendRoutingModule

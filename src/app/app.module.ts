@@ -6,12 +6,17 @@ import { AppComponent } from './app.component';
 import { ShareModule } from './share/share.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule, ParamInterceptor, NotificationInterceptor } from './home';
+import { CategoryModule } from './category';
 // import { ScrollableTabComponent, ImageSliderComponent, HorizontalGridComponent } from './components';
 // import { HorizontalGridComponent } from './components/horizontal-grid/horizontal-grid.component';
 // import { ImageSliderComponent } from './components/image-slider/image-slider.component';
 import localeZh from '@angular/common/locales/zh-Hans';
 import { registerLocaleData } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ChatModule } from './chat';
+import { MyModule } from './my';
+import { RecommendModule } from './recommend';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +27,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HomeModule
+    HomeModule,
+    CategoryModule,
+    ChatModule,
+    MyModule,
+    RecommendModule
   ],
   providers: [
     {
