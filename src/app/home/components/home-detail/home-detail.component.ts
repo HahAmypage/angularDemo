@@ -55,6 +55,7 @@ export class HomeDetailComponent implements OnInit {
 
     this.router.paramMap.subscribe(param =>{
       this.selectTabLink = param.get('tablink');
+      this.change.markForCheck();
     });
 
     this.sub = this.router.queryParamMap.subscribe(param =>{

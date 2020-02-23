@@ -9,6 +9,10 @@ import { fromEvent } from 'rxjs';
 export class ParentComponent implements OnInit {
 
 
+  // startDate = new Date(2020,2,23);
+  futureDate = new Date(2020,1,26); //注意这里转换后是2020-2-26的零点
+  startDate = new Date(Date.now());
+  
   constructor() { 
     
   }

@@ -22,7 +22,7 @@ export interface TopMenu{
 export class ScrollableTabComponent implements OnInit , OnChanges, DoCheck,AfterContentInit,AfterContentChecked,AfterViewInit,AfterViewChecked{
 
   title = '拼多多';
-  selectIndex = -1 ; // 起始值
+  selectIndex = 0 ; // 起始值,默认打开页面时选择“热门”
 
   @Input() menus:TopMenu[] = [];
   @Input() backgroundColor = '#fff';

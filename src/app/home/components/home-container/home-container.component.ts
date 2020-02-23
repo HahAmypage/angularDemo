@@ -11,7 +11,7 @@ import { Observable, Subscriber, Subscription } from 'rxjs';
 })
 export class HomeContainerComponent implements OnInit,OnDestroy {
 
-  scrollTabBackgroundCorlor = "red";
+  scrollTabBackgroundCorlor = "whited";
   // topMenus$: Observable<TopMenu[]>;
   topMenus: TopMenu[] = [];
   sub: Subscription;
