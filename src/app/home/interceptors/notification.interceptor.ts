@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {
-    HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpErrorResponse
+    HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpErrorResponse, HttpResponse
 } from '@angular/common/http';
 import { tap } from 'rxjs/operators'
 
@@ -9,7 +9,7 @@ export class NotificationInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler) {
         return next.handle(req).pipe(
             tap((event: HttpEvent<any>) =>{
-                if(event instanceof HttpErrorResponse && event.status >= 200 && event.status < 300){
+                if(event instanceof HttpResponse && event.status >= 200 && event.status < 300){
                     console.log("请求成功！");
                 }
             })

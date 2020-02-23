@@ -10,6 +10,7 @@ export class ParamInterceptor implements HttpInterceptor {
         const updateReque = req.clone({
             setParams: { icode: environment.icode }
         });
+        console.log("param interceptor 处理完成")
         return next.handle(updateReque);
     }
 }
