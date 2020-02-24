@@ -26,7 +26,7 @@ export class HomeService {
   }
 
   getAdByTab(tab: string){
-    return this.http.get<Ad>('http://localhost:9001/ad',{params:{categoryName: tab}});
+    return this.http.get<Ad[]>('http://localhost:9001/ad',{params:{categoryName: tab}});
   }
 }
 

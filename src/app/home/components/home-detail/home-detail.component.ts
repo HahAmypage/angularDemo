@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@
 import { ImageSlider, Channel } from 'src/app/share/components';
 import { ActivatedRoute } from '@angular/router';
 import { HomeService } from '../../services';
-import { filter, map } from 'rxjs/operators';
+import { filter, map, switchMap } from 'rxjs/operators';
 import { Observable, Subscriber, Subscription } from 'rxjs';
 import { Ad } from 'src/app/share/domain';
 
@@ -65,7 +65,11 @@ export class HomeDetailComponent implements OnInit {
       console.log('查询参数：',param);
     });
 
-    // this.ad$ = this.selectTabLink
+    this.ad$ = this.selectTabLink$.pipe(
+      switchMap(tab => this.service.getAdByTab(tab)),
+      filter(ads => ads.length > 0),
+      map(ad => ad[0])
+    );
   }
 
   ngOnDestroy(): void {
