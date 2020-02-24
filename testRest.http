@@ -42,4 +42,8 @@ GET http://localhost:9001/banners HTTP/1.1
 
 
 ###
+GET http://localhost:9001/ad?categoryName=phone HTTP/1.1
+
+
+###
 GET http://localhost:9001/channels HTTP/1.1

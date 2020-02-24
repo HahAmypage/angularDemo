@@ -1,13 +1,22 @@
-<div *ngIf="selectTabLink === 'hot'">
-    <app-image-slider [sliders]="imageSliders"> </app-image-slider>
+<ng-container *ngIf="selectTabLink$ | async as tab"> 
+    <!-- ng-container这个组建的好处是不会增加节点 -->
+    <ng-container *ngIf="tab === 'hot'">
+        <app-image-slider [sliders]="imageSliders$ | async"> </app-image-slider>
 
-    <app-horizontal-grid>
-        <span appGridItem *ngFor="let item of channels">
-            <img [src]="item.icon" alt="" [appGridItemImage]="'3rem'">
-            <span appGridItemTitle>{{ item.title  }}</span>
-        </span>
-    </app-horizontal-grid>
+        <app-horizontal-grid>
+            <span appGridItem *ngFor="let item of channels$ | async">
+                <img [src]="item.icon" alt="" [appGridItemImage]="'3rem'">
+                <span appGridItemTitle>{{ item.title  }}</span>
+            </span>
+        </app-horizontal-grid>
+    </ng-container>
+</ng-container>
+
+<div class="ad-container" *ngIf="ad$ | async as ad">
+    <img [src]="ad.imageUrl" alt="" class="ad-image">
 </div>
+
+
 
 <!-- <ng-template #other>
     other tabs

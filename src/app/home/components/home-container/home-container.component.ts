@@ -13,8 +13,8 @@ import { filter, map } from 'rxjs/operators';
 export class HomeContainerComponent implements OnInit,OnDestroy {
 
   scrollTabBackgroundCorlor = "whited";
-  // topMenus$: Observable<TopMenu[]>;
-  topMenus: TopMenu[] = [];
+  topMenus$: Observable<TopMenu[]>;
+  // topMenus: TopMenu[] = [];
   sub: Subscription;
   selectTabLink$: Observable<string>;
   constructor(
@@ -32,15 +32,15 @@ export class HomeContainerComponent implements OnInit,OnDestroy {
 
     console.log(this.service.getTopMenu());
     // 用订阅方式可以获取自己后台的数据并显示
-    this.sub = this.service.getTopMenu().subscribe(res =>{
-      console.log(res);
-      this.topMenus = res;
-    });
+    // this.sub = this.service.getTopMenu().subscribe(res =>{
+    //   console.log(res);
+    //   this.topMenus = res;
+    // });
     // console.log(this.baseUrl);
 
     // 用流的方式获取数据,暂时显示不出来
     //（浏览器控制台可以看到this.service.getTopMenu() 这里是有拿到数据就是页面显示不出来）
-    // this.topMenus$ = this.service.getTopMenu();
+    this.topMenus$ = this.service.getTopMenu();
   }
 
   

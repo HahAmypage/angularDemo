@@ -1,5 +1,5 @@
 <app-scrollable-tab 
-  [menus]='topMenus' (tabsSelected) = 'handlerSelectTab($event)' 
+  [menus]='topMenus$ | async' (tabsSelected) = 'handlerSelectTab($event)' 
   [backgroundColor]= "scrollTabBackgroundCorlor"
   titleActiveColor = 'red'
   titleColor = '#000'

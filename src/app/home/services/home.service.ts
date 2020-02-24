@@ -3,6 +3,7 @@ import { TopMenu, ImageSlider, Channel } from 'src/app/share/components';
 
 import { HttpClient } from '@angular/common/http'
 import { environment } from 'src/environments/environment';
+import { Ad } from 'src/app/share/domain';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,10 @@ export class HomeService {
 
   getImageSlider(){
     return this.http.get<ImageSlider[]>(`${environment.baseUrl}/banners`);
+  }
+
+  getAdByTab(tab: string){
+    return this.http.get<Ad>('http://localhost:9001/ad',{params:{categoryName: tab}});
   }
 }
 
