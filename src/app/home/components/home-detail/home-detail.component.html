@@ -19,7 +19,7 @@
 <app-vertical-grid [itemWidth] = "'20rem'" [itemHight] = "'1rem'">
   
     <app-product-card *ngFor="let product of products$ | async" [product] = "product"
-    [routerLink] = "['products',product.id]">
+    [routerLink] = "['/products',product.id]">
 
     </app-product-card>
    

@@ -16,6 +16,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ChatModule } from './chat';
 import { MyModule } from './my';
 import { RecommendModule } from './recommend';
+import { ProductModule } from './product';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { RecommendModule } from './recommend';
     CategoryModule,
     ChatModule,
     MyModule,
-    RecommendModule
+    RecommendModule,
+    ProductModule
   ],
   providers: [
     {

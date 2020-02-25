@@ -5,7 +5,7 @@
 <app-vertical-grid [itemWidth] = "'10rem'" [itemHight] = "'1rem'">
   
     <app-produce-tile *ngFor="let product of products$ | async" [product] = "product"
-    [routerLink] = "['products',product.id]">
+    [routerLink] = "['/products',product.id]">
 
     </app-produce-tile>
 

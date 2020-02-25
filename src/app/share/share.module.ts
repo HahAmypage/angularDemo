@@ -9,6 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { VerticalGridComponent } from './components/vertical-grid/vertical-grid.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProduceTileComponent } from './components/produce-tile/produce-tile.component';
+import { BackButtonComponent } from './components/back-button/back-button.component';
 
 
 
@@ -28,6 +29,7 @@ import { ProduceTileComponent } from './components/produce-tile/produce-tile.com
     TabDirective,
     AvatarDirective,
     ProduceTileComponent,
+    BackButtonComponent,
   ],
   imports: [
     CommonModule,FormsModule
@@ -47,7 +49,8 @@ import { ProduceTileComponent } from './components/produce-tile/produce-tile.com
     ProductCardComponent,
     TabDirective,
     AvatarDirective,
-    ProduceTileComponent
+    ProduceTileComponent,
+    BackButtonComponent
   ]
 })
 export class ShareModule { }
