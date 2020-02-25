@@ -52,4 +52,4 @@ GET http://localhost:9001/channels HTTP/1.1
 GET http://localhost:9001/product?categoryName=hot HTTP/1.1
 
 ###
-GET http://localhost:9001/productVariants?_embed=productVariantImages&productId=1&_expand=product HTTP/1.1
+GET http://localhost:9001/productVariants?_embed=productVariantImages&productId=38&_expand=product HTTP/1.1

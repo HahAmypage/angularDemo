@@ -33,6 +33,9 @@ export class ImageSliderComponent implements OnInit , AfterViewInit , OnDestroy{
    * 在这里可以安全使用页面上的元素
    */
   ngAfterViewInit(): void {
+    if(this.intervalSecond <= 0){
+      return;
+    }
     this.intervalId =setInterval(()=>{
       this.rd2.setProperty(this.imageSlider.nativeElement,'scrollLeft',
       (this.getIndex(++this.selectedIndex) * this.imageSlider.nativeElement.scrollWidth) / this.sliders.length)
