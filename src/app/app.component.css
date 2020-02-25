@@ -9,3 +9,12 @@
     flex-direction: column;
     align-items: stretch;
 }
+
+/**
+-webkit-overflow-scrolling: touch ; 由于上面这个属性在浏览器提示无效
+为了固定底部，不跟随滑动，在footer组件添加如下样式,不使用这种方式，在home-contain中加样式，让它只滚动本身*/
+/* .footer{
+    position: fixed;
+    bottom: 0px;
+    z-index: 9999;
+} */

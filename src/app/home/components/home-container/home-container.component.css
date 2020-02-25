@@ -3,4 +3,32 @@
     flex-direction: column;
     align-items: stretch;
     flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
+
+.main{
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch ; /**Chrome中失效*/
+    height: 100% - 3rem; /**顶部预留空间给分类栏*/
+    /* padding-bottom: 5rem; */
+}
+
+/**
+-webkit-overflow-scrolling: touch ; 由于上面这个属性在浏览器提示无效
+所以在app-scrollable-tab 里额外添加如下的CSS来达到固定顶部分类不跟随滑动的效果
+*/
+/**z-index:9999;这是组件重叠时，设置显示优先级，避免被其他组件覆盖*/
+/**background-color: #fff;加这个是因为如果透明的时候，滑动会显示出底下的组件*/
+/** 这种方式固定顶部分类带来另一个问题就是顶部分类不能向左滑动*/
+/* .tab{
+    background-color: #fff; 
+    position: fixed;
+    top: 0px;
+    z-index:9999; 
+    scroll-behavior: smooth;  
+    scroll-snap-type: x mandatory;
+} */

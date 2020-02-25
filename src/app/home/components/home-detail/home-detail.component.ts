@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HomeService } from '../../services';
 import { filter, map, switchMap } from 'rxjs/operators';
 import { Observable, Subscriber, Subscription } from 'rxjs';
-import { Ad } from 'src/app/share/domain';
+import { Ad, Product } from 'src/app/share/domain';
 
 @Component({
   selector: 'app-home-detail',
@@ -26,6 +26,8 @@ export class HomeDetailComponent implements OnInit {
   sub: Subscription
 
   ad$: Observable<Ad> 
+
+  products$: Observable<Product[]>;
 
   constructor(private router:ActivatedRoute , private service: HomeService, private change: ChangeDetectorRef) { }
 
@@ -70,11 +72,10 @@ export class HomeDetailComponent implements OnInit {
       filter(ads => ads.length > 0),
       map(ad => ad[0])
     );
-  }
 
-  ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
-    this.sub.unsubscribe();
-  }
+    this.products$ = this.selectTabLink$.pipe(
+      switchMap(tab => this.service.getProductByTap(tab))
+    )
+
+    }
 }

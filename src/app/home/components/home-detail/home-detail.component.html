@@ -1,7 +1,7 @@
 <ng-container *ngIf="selectTabLink$ | async as tab"> 
     <!-- ng-container这个组建的好处是不会增加节点 -->
     <ng-container *ngIf="tab === 'hot'">
-        <app-image-slider [sliders]="imageSliders$ | async"> </app-image-slider>
+        <app-image-slider [sliders]="imageSliders$ | async" [sliderHeight] = "'150px'"> </app-image-slider>
 
         <app-horizontal-grid>
             <span appGridItem *ngFor="let item of channels$ | async">
@@ -15,6 +15,15 @@
 <div class="ad-container" *ngIf="ad$ | async as ad">
     <img [src]="ad.imageUrl" alt="" class="ad-image">
 </div>
+<!-- 根据itemWidth属性自动按单列或双列排，要按双列排的话改为10rem -->
+<app-vertical-grid [itemWidth] = "'20rem'" [itemHight] = "'1rem'">
+  
+    <app-product-card *ngFor="let product of products$ | async" [product] = "product"
+    [routerLink] = "['products',product.id]">
+
+    </app-product-card>
+   
+</app-vertical-grid>
 
 
 

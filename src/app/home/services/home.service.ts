@@ -3,7 +3,7 @@ import { TopMenu, ImageSlider, Channel } from 'src/app/share/components';
 
 import { HttpClient } from '@angular/common/http'
 import { environment } from 'src/environments/environment';
-import { Ad } from 'src/app/share/domain';
+import { Ad, Product } from 'src/app/share/domain';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +26,11 @@ export class HomeService {
   }
 
   getAdByTab(tab: string){
-    return this.http.get<Ad[]>('http://localhost:9001/ad',{params:{categoryName: tab}});
+    return this.http.get<Ad[]>('http://localhost:9001/ad',{params: {categoryName: tab}});
+  }
+
+  getProductByTap(tab:string){
+    return this.http.get<Product[]>('http://localhost:9001/product',{params: {categoryName:tab}});
   }
 }
 

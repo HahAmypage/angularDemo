@@ -10,7 +10,7 @@ import { filter, map } from 'rxjs/operators';
   templateUrl: './home-container.component.html',
   styleUrls: ['./home-container.component.css']
 })
-export class HomeContainerComponent implements OnInit,OnDestroy {
+export class HomeContainerComponent implements OnInit {
 
   scrollTabBackgroundCorlor = "whited";
   topMenus$: Observable<TopMenu[]>;
@@ -44,11 +44,11 @@ export class HomeContainerComponent implements OnInit,OnDestroy {
   }
 
   
-  ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
-    this.sub.unsubscribe();
-  }
+  // ngOnDestroy(): void {
+  //   //Called once, before the instance is destroyed.
+  //   //Add 'implements OnDestroy' to the class.
+  //   this.sub.unsubscribe();
+  // }
   handlerSelectTab(topMenu:TopMenu){
     this.router.navigate(['home',topMenu.link]);
   }

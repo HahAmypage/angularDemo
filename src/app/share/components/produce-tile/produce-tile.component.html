@@ -1,0 +1,22 @@
+<div class="container">
+    <img [src]="product.imageUrl" class="product-image" />
+    <div class="product-title">
+        {{ product.title | slice: 0:13 }}
+    </div>
+    <div class="product-tags">
+        <span appTap *ngFor="let tab of product.tabList ; let ind = index">
+          <span *ngIf="ind < 3 ">{{ tab }}</span>  
+        </span>
+    </div>
+    <div class="product-price">
+        <span class="price-section">
+            <h3 class="price">{{ product.price | currency:'CNY'}}</h3>
+        </span>
+        <span class="price-desc">
+            {{ product.productDesc }}
+        </span>
+        <span class="price-more">
+            发现
+        </span>
+    </div>
+</div>

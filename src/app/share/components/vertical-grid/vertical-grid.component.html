@@ -1,0 +1,13 @@
+<div class="grid_container" 
+[ngStyle]="{'grid-template-rows': templateRows , 
+'grid-template-columns':templateColumns , 'grid-gap': gridGap}">
+    <ng-content></ng-content>
+</div>
+
+<!-- [ngStyle]="{'grid-template-rows': templateRows,
+'grid-template-columns': templateColumns ,
+'grid-gap': gridGap}" -->
+
+
+<!-- grid-template-rows: minmax(auto, max-content);
+     grid-template-columns: repeat(8, calc((100vw - 2rem) / 5)); -->

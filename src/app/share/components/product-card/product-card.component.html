@@ -1,0 +1,27 @@
+<div class="container">
+    <img [src]="product.imageUrl" class="product-image" />
+    <div class="product-title">
+        {{ product.title }}
+    </div>
+    <div class="product-tags">
+        <span appTap *ngFor="let tab of product.tabList ; let ind = index">
+          <span *ngIf="ind < 3 else other">{{ tab }}</span>  
+          <ng-template #other>
+              <div></div>
+          </ng-template>
+        </span>
+    </div>
+    <div class="product-price">
+        <span class="price-section">
+            <b>&yen;</b>
+            <h3 class="price">{{ product.price }}</h3>
+        </span>
+        <span class="price-desc">
+            {{ product.productDesc }}
+        </span>
+        <span class="price-avatar">
+            <img appAvatar *ngFor="let avatar of product.buyerAvatarsList ; let ind = index" 
+            [src]="avatar" [ngStyle]="{'left': -ind * 10 + 'px','z-index':1000 - ind}"/>
+        </span>
+    </div>
+</div>
