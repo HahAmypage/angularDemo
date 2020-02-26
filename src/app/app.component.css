@@ -10,6 +10,37 @@
     align-items: stretch;
 }
 
+
+.hidden{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+#overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.6;
+    z-index: 2999;
+}
+
+#dialog-container{
+    position: fixed;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    margin-left: 0;
+    text-align: center;
+    box-shadow: 0 0 2px 1px;
+    z-index: 3000;
+}
 /**
 -webkit-overflow-scrolling: touch ; 由于上面这个属性在浏览器提示无效
 为了固定底部，不跟随滑动，在footer组件添加如下样式,不使用这种方式，在home-contain中加样式，让它只滚动本身*/

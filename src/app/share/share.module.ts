@@ -10,6 +10,8 @@ import { VerticalGridComponent } from './components/vertical-grid/vertical-grid.
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProduceTileComponent } from './components/produce-tile/produce-tile.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
+import { DialogComponent } from '../dialog';
+import { DialogModule } from '../dialog/dialog.module';
 
 
 
@@ -37,6 +39,7 @@ import { BackButtonComponent } from './components/back-button/back-button.compon
   exports:[
     CommonModule,FormsModule,
     ScrollableTabComponent,
+    DialogModule,
     ImageSliderComponent,
     HorizontalGridComponent,
     GridItemDirective,

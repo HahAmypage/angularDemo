@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { TabItem } from './share/domain';
 import { Route, Router, NavigationEnd } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
+import { DialogService } from './dialog';
 // import { TopMenu, ImageSlider, ImageSliderComponent, Channel } from './share/components';
 
 // 使用interface定义属性
@@ -32,7 +33,7 @@ export class AppComponent implements OnInit{
   
 selectedItemIndex$: Observable<number>;
 
-constructor(private router: Router){
+constructor(private router: Router, private dialogSerivce: DialogService){
   
 }
 
@@ -64,6 +65,9 @@ handlersSelectedTab(tab: TabItem){
   this.router.navigate([tab.link]);
 }
 
+removeDialog(){
+  this.dialogSerivce.close();
+}
 
 ngAfterViewInit(): void {
   //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
