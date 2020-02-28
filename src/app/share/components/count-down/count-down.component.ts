@@ -25,7 +25,7 @@ export class CountDownComponent implements OnInit {
     return interval(1000).pipe(
       map(elapse => this.diffInSec(startDate,furtureDate) - elapse),
       takeWhile(gap => gap >= 0),
-      tap(val => console.log(val)), //打印出毫秒差值
+      // tap(val => console.log(val)), //打印出毫秒差值
       map(sec=>(
         {
           day: Math.floor(sec / 3600 /24),
@@ -34,7 +34,7 @@ export class CountDownComponent implements OnInit {
           second: Math.floor(sec % 60)
         }
       )),
-      tap(val => console.log(val)), // 打印出改变了格式后的时间
+      // tap(val => console.log(val)), // 打印出改变了格式后的时间
       map(({day,hour,minute,second}) => `${day}天${hour}:${minute}:${second}` )
       );
   }

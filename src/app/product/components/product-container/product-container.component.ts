@@ -1,7 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProductVariant, OrderService } from '../..';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { filter, map, switchMap } from 'rxjs/operators';
 import { DialogService } from 'src/app/dialog';
 import { ProductVariantDialogComponent } from '../product-variant-dialog/product-variant-dialog.component';
@@ -21,7 +21,7 @@ export class ProductContainerComponent implements OnInit {
   imageIdex = 0
 
   constructor(private service: OrderService,private router: ActivatedRoute,
-    private dialogService: DialogService) { }
+    private dialogService: DialogService , private route: Router) { }
 
   ngOnInit() {
     const productId$ = this.router.paramMap.pipe(
@@ -38,11 +38,35 @@ export class ProductContainerComponent implements OnInit {
 
   }
 
+
   handleGroupBuy(variants: ProductVariant){
     const top = 40;
+    //Subject既是一个Observable,也是一个Observer
+    //Subject是可以next()也可以进行subscribe
+    //Behavior是Subject的一个特殊值
+    const formSubmitted = new EventEmitter;
+
+    formSubmitted.subscribe(ev => {
+      console.log("打印："+ev);
+      this.dialogService.saveData(ev);
+      this.route.navigate(['/order/comfirm']);
+    });
+
+    const selected = new EventEmitter();
+    selected.subscribe(ev =>{
+      console.log("打印："+ev);
+      this.selectIndex = ev;
+    })
+
     this.dialogService.open(ProductVariantDialogComponent,{
-      inputs: {},
-      outputs: {},
+      inputs: {
+        variants: variants,
+        selectedVariantIndex: this.selectIndex
+      },
+      outputs: {
+        formSubmitted: formSubmitted,
+        selected: selected
+      },
       position: {
         top: `${top}%`,
         left: `0`,
