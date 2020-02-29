@@ -1,1 +1,59 @@
-<p>confirm-order works!</p>
+<div class="container" *ngIf=" item$ | async as item">
+    <div class="title-bar">
+        <app-back-button></app-back-button>
+        <span>确认订单</span>
+    </div>
+    <div class="content">
+        <div class="address-bar">
+            <img src="/assets/icons/location.png" alt="" class="location">
+            <div class="name-and-mobile">
+                <span class="name">张三</span>
+                <span class="mobile">13922229909</span>
+            </div>
+            <div class="address">
+                广东省广州市天河区xxx路xxx号
+            </div>
+            <img src="/assets/icons/navigate_next.png" alt="" class="more">
+        </div>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="shop">
+            <img src="assets/icons/brand.png" alt="">
+            <span>xxxx专营店</span>
+        </div>
+        <div class="product-bar">
+            <img [src]="item.variant.productVariantImages[0].imageUrl" alt="" class="product-image">
+            <div class="product-name">{{ item.variant.product.title }}</div>
+            <div class="product-spec">{{ item.variant.name }}</div>
+            <div class="product-price">
+                <span>{{ item.variant.price | currency: 'CNY' }} / 件</span>
+                <span class="price-condition">退货包邮</span>
+            </div>
+        </div>
+        <div class="amount">
+            <span>数量：</span>
+            <app-product-amount [count] = "item.count" (amountChange) = "handleAmountChange($event)"></app-product-amount>
+        </div>
+        <app-payment [payments] = "payments"></app-payment>
+    </div>
+    <div class="toolbar">
+        <div class="total-price">
+            <span>实付款</span>
+            <span class="price-section">
+                {{ totalPrice$ | async | currency: 'CNY' }}
+            </span>
+            <span style="color: red;">
+                &nbsp; 免邮费
+            </span>
+        </div>
+        <div class="pay" (click) = "handlerPay($event)">
+            <div>立即支付</div>
+        </div>
+    </div>
+</div>

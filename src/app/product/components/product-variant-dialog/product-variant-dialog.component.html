@@ -15,12 +15,10 @@
             {{ variant.name }}
             </div>
         </div>
-        <div>
+        <div class="amount">
             <span>数量</span>
-            <span>
-                <app-product-amount (amountChange) = "handleAmountChange($event)">
-                </app-product-amount>
-            </span>
+            <app-product-amount (amountChange) = "handleAmountChange($event)">
+            </app-product-amount>
         </div>
             
             

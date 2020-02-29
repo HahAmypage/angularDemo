@@ -50,7 +50,7 @@ export class ProductVariantDialogComponent implements OnInit {
   }
 
   handleConfirm(){
-    if(this.selectedVariantIndex < 0 || this.variants.length === 0){
+    if(this.selectedVariantIndex < 0 || this.variants.length === 0 || this.count === 0){
       return ;
     }
     this.formSubmitted.emit({

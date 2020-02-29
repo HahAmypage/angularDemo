@@ -1,3 +1,4 @@
+
 .close-button {
     position: fixed;
     left: calc(100% - 2rem);
@@ -39,7 +40,6 @@
     align-items: flex-start;
     margin-top: 6rem;
     margin-left: 1rem;
-    margin-bottom: 6.4rem;
   }
   .variant {
     display: flex;
@@ -57,6 +57,7 @@
   .buttons {
     display: flex;
     bottom: 0px;
+    margin-top: 7.8rem;
   }
   .confirm-button {
     width: 100%;
@@ -78,12 +79,18 @@
   button {
     border-style: none;
   }
-  app-product-amount {
-    width: 30%;
-    margin: 0.5rem 0;
+
+  .amount{
+    width: 100%;
+    display: flex;
   }
 
-  #number{
-    float: left;
+  app-product-amount {
+    width: 30%;
+    margin: 0.5rem 0.5rem 0.5rem 11rem;
   }
-  
+
+  .amount > span{
+    margin: 0.5rem 0.5rem;
+  }
+

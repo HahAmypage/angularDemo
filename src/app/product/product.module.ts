@@ -9,6 +9,7 @@ import { GroupShopListComponent } from './components/group-shop-list/group-shop-
 import { ProductVariantDialogComponent } from './components/product-variant-dialog/product-variant-dialog.component';
 import { ProductAmountComponent } from './components/product-amount/product-amount.component';
 import { ConfirmOrderComponent } from './components/confirm-order/confirm-order.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ConfirmOrderComponent } from './components/confirm-order/confirm-order.
      GroupShopListComponent,
      ProductVariantDialogComponent,
      ProductAmountComponent,
-     ConfirmOrderComponent],
+     ConfirmOrderComponent,
+     PaymentComponent],
   imports: [
     ShareModule,
     ProductRoutingModule

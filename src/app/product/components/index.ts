@@ -4,3 +4,4 @@ export * from './group-item';
 export * from './product-amount';
 export * from './product-variant-dialog';
 export * from './confirm-order';
+export * from './payment';

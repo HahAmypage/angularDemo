@@ -40,6 +40,7 @@
     text-align: center;
     box-shadow: 0 0 2px 1px;
     z-index: 3000;
+    height: 100%;
 }
 /**
 -webkit-overflow-scrolling: touch ; 由于上面这个属性在浏览器提示无效
